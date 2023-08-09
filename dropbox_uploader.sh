@@ -804,7 +804,7 @@ function db_download
             local SIZE=${META#*;}
 
             #Removing unneeded /
-            FILE=${FILE##*/}
+            FILE=$(basename "${FILE##*/}")
 
             if [[ $TYPE == "file" ]]; then
                 db_download_file "$SRC/$FILE" "$DEST_DIR/$FILE"
@@ -826,7 +826,8 @@ function db_download
 
         #If the destination is a directory, the file will be download into
         if [[ -d $DST ]]; then
-            DST="$DST/$SRC"
+            FILE=$(basename "$SRC")
+            DST="$DST/$FILE"
         fi
 
         db_download_file "$SRC" "$DST"
