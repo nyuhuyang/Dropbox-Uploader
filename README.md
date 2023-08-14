@@ -44,6 +44,7 @@ curl "https://raw.githubusercontent.com/nyuhuyang/Dropbox-Uploader/master/dropbo
 Then give the execution permission to the script and run it:
 
 ```bash
+ $cd Dropbox-Uploader
  $chmod +x dropbox_uploader.sh
  $./dropbox_uploader.sh
 ```
